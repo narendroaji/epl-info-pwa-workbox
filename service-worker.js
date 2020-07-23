@@ -56,13 +56,6 @@ workbox.routing.registerRoute(
 );
 
 workbox.routing.registerRoute(
-    new RegExp('/team.html?'),
-    new workbox.strategies.StaleWhileRevalidate({
-        cacheName: 'team-cache',
-    })
-);
-
-workbox.routing.registerRoute(
     /.*\.(?:png|jpg|jpeg|svg|gif)/,
     new workbox.strategies.StaleWhileRevalidate({
         cacheName: 'images-cache',
