@@ -123,6 +123,9 @@ const showTeamById = data => {
 
 const showUpcomingMatchesByTeamId = data => {
     let matchList = ``;
+    let noMatches = `
+        <p class="center-align"><strong>There is no matches for this team.</strong></p>
+    `;
     data.matches.forEach(match => {
         matchList += `
             <table class="striped centered z-depth-2" style="margin-bottom: 20px;">
@@ -140,12 +143,22 @@ const showUpcomingMatchesByTeamId = data => {
             </table>
         `;
     })
-    let teamUpcomingMatches = `
-        <section class="z-depth-3">
-            <h5 class="center-align">Upcoming Matches</h5>
-            ${matchList}          
-        </section>
-    `;
+
+    let teamUpcomingMatches;
+    if (matchList === ``) {
+        teamUpcomingMatches = `
+            <section class="z-depth-3">
+                ${noMatches}          
+            </section>
+        `;
+    } else {
+        teamUpcomingMatches = `
+            <section class="z-depth-3">
+                <h5 class="center-align">Upcoming Matches</h5>
+                ${matchList}          
+            </section>
+        `;
+    }
     document.getElementById('showTeamUpcomingMatches').innerHTML = teamUpcomingMatches;
 }
 
