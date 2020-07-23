@@ -228,6 +228,12 @@ const showScorers = data => {
 
 const showUpcomingMatches = data => {
     let matchList = ``;
+    let noMatches = `
+        <section class="col s12 z-depth-3">
+            <p class="center-align"><strong>There is no matches or league has ended.</strong></p>
+        </section>
+    `;
+
     data.matches.forEach(match => {
         matchList += `
             <table class="striped centered z-depth-2" style="margin-bottom: 20px;">
@@ -246,15 +252,20 @@ const showUpcomingMatches = data => {
         `;
     })
 
-    let upcomingMatches = `
-        <div style="padding-top: 10px; padding-bottom: 10px;">
-            <h5 class="center">Upcoming Matches in Two Weeks Ahead</h5>
-        </div>
-        <div>
-            ${matchList}
-        </div>
+    let upcomingMatches;
+    if (matchList === ``) {
+        document.getElementById('showUpcomingMatches').innerHTML = noMatches;
+    } else {
+        upcomingMatches = `
+            <div style="padding-top: 10px; padding-bottom: 10px;">
+                <h5 class="center">Upcoming Matches in Two Weeks Ahead</h5>
+            </div>
+            <div>
+                ${matchList}
+            </div>
         `;
-    document.getElementById('showUpcomingMatches').innerHTML = upcomingMatches;
+        document.getElementById('showUpcomingMatches').innerHTML = upcomingMatches;
+    }
 }
 
 const showFavoriteTeams = data => {
