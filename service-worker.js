@@ -22,7 +22,7 @@ workbox.precaching.precacheAndRoute([
     { url: './js/materialize.min.js', revision: '1' },
     { url: './js/moment.min.js', revision: '1' },
     { url: './js/nav.js', revision: '1' },
-    { url: './js/render.js', revision: '1' },
+    { url: './js/render.js', revision: '2' },
     { url: './js/team.js', revision: '1' },
     { url: './js/utility.js', revision: '1' }], {ignoreURLParametersMatching: [/.*/]}
 );
