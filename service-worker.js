@@ -44,21 +44,21 @@ workbox.routing.registerRoute(
 workbox.routing.registerRoute(
     new RegExp('https://api.football-data.org/v2/'),
     new workbox.strategies.StaleWhileRevalidate({
-      cacheName: 'api-cache',
+      cacheName: 'api',
     })
 );
 
 workbox.routing.registerRoute(
     new RegExp('/pages'),
     new workbox.strategies.StaleWhileRevalidate({
-      cacheName: 'pages-cache',
+      cacheName: 'pages',
     })
 );
 
 workbox.routing.registerRoute(
     /.*\.(?:png|jpg|jpeg|svg|gif)/,
     new workbox.strategies.StaleWhileRevalidate({
-        cacheName: 'images-cache',
+        cacheName: 'images',
         plugins: [
             new workbox.cacheableResponse.CacheableResponse({
                 statuses: [0, 200],
