@@ -6,25 +6,25 @@ else
     console.log(`Workbox gagal dimuat`);
 
 workbox.precaching.precacheAndRoute([
-    { url: '/index.html', revision: '1' },
-    { url: '/team.html', revision: '1' },
-    { url: '/nav.html', revision: '1' },
-    { url: '/favicon.ico', revision: '1' },
-    { url: '/manifest.json', revision: '1' },
-    { url: '/package-lock.json', revision: '1' },
-    { url: '/css/materialize.min.css', revision: '1' },
-    { url: '/css/style.css', revision: '1' },
-    { url: '/push.js', revision: '1' },
-    { url: '/js/api.js', revision: '1' },
-    { url: '/js/db.js', revision: '1' },
-    { url: '/js/idb.js', revision: '1' },
-    { url: '/js/index.js', revision: '1' },
-    { url: '/js/materialize.min.js', revision: '1' },
-    { url: '/js/moment.min.js', revision: '1' },
-    { url: '/js/nav.js', revision: '1' },
-    { url: '/js/render.js', revision: '1' },
-    { url: '/js/team.js', revision: '1' },
-    { url: '/js/utility.js', revision: '1' }], {ignoreURLParametersMatching: [/.*/]}
+    { url: './index.html', revision: '1' },
+    { url: './team.html', revision: '1' },
+    { url: './nav.html', revision: '1' },
+    { url: './favicon.ico', revision: '1' },
+    { url: './manifest.json', revision: '1' },
+    { url: './package-lock.json', revision: '1' },
+    { url: './css/materialize.min.css', revision: '1' },
+    { url: './css/style.css', revision: '1' },
+    { url: './push.js', revision: '1' },
+    { url: './js/api.js', revision: '1' },
+    { url: './js/db.js', revision: '1' },
+    { url: './js/idb.js', revision: '1' },
+    { url: './js/index.js', revision: '1' },
+    { url: './js/materialize.min.js', revision: '1' },
+    { url: './js/moment.min.js', revision: '1' },
+    { url: './js/nav.js', revision: '1' },
+    { url: './js/render.js', revision: '1' },
+    { url: './js/team.js', revision: '1' },
+    { url: './js/utility.js', revision: '1' }], {ignoreURLParametersMatching: [/.*/]}
 );
 
 workbox.routing.registerRoute(
