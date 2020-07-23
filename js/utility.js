@@ -7,7 +7,7 @@ if (!('serviceWorker' in navigator)) {
 
 function registerServiceWorker() {
     return navigator.serviceWorker
-    .register('../epl-info-pwa-workbox/service-worker.js', {scope: '/epl-info-pwa-workbox/'})
+    .register('./epl-info-pwa-workbox/service-worker.js', {scope: './epl-info-pwa-workbox/'})
     .then(function (registration) {
         console.log('Registrasi service worker berhasil.');
         return registration;
