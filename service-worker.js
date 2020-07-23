@@ -24,8 +24,8 @@ workbox.precaching.precacheAndRoute([
     { url: '/js/nav.js', revision: '1' },
     { url: '/js/render.js', revision: '1' },
     { url: '/js/team.js', revision: '1' },
-    { url: '/js/utility.js', revision: '1' },
-]);
+    { url: '/js/utility.js', revision: '1' }], {ignoreURLParametersMatching: [/.*/]}
+);
 
 workbox.routing.registerRoute(
     /^https:\/\/fonts\.googleapis\.com/,
