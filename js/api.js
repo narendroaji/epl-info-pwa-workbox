@@ -1,5 +1,5 @@
 const BASE_URL = 'https://api.football-data.org/v2';
-const PREMIER_LEAGUE = `2021`;
+const PREMIER_LEAGUE = '2021';
 const OPTIONS = {
     headers: {
         'X-Auth-Token': 'f9f27c8e03f444149eba13c8f6868f2b',
