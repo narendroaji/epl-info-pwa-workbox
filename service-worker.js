@@ -14,6 +14,7 @@ workbox.precaching.precacheAndRoute([
     { url: './package-lock.json', revision: '1' },
     { url: './css/materialize.min.css', revision: '1' },
     { url: './css/style.css', revision: '1' },
+    { url: './img/pl-logo.png', revision: '1' },
     { url: './push.js', revision: '1' },
     { url: './js/api.js', revision: '1' },
     { url: './js/db.js', revision: '1' },
