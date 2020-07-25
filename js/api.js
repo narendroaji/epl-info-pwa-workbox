@@ -57,8 +57,8 @@ const getTeams = () => {
 
 const getTeamById = () => {
     return new Promise(function(resolve, reject) {
-        let urlParams = new URLSearchParams(window.location.search);
-        let idParam = urlParams.get("id");
+        const urlParams = new URLSearchParams(window.location.search);
+        const idParam = urlParams.get("id");
 
         if ('caches' in window) {
             caches.match(`${BASE_URL}/teams/${idParam}`)
@@ -85,19 +85,19 @@ const getTeamById = () => {
 }
 
 const getUpcomingMatchesByTeamId = () => {
-    let urlParams = new URLSearchParams(window.location.search);
-    let idParam = urlParams.get("id");
+    const urlParams = new URLSearchParams(window.location.search);
+    const idParam = urlParams.get("id");
 
-    let yearNow = moment().get('year');
-    let monthNow = (moment().get('month')) + 1;
-    let dateNow = moment().get('date');
-    let dateFrom = `${yearNow}-${addZero(monthNow)}-${addZero(dateNow)}`;
+    const yearNow = moment().get('year');
+    const monthNow = (moment().get('month')) + 1;
+    const dateNow = moment().get('date');
+    const dateFrom = `${yearNow}-${addZero(monthNow)}-${addZero(dateNow)}`;
     
-    let limit = moment().add(14, 'days');
-    let limitYear = limit.get('year');
-    let limitMonth = (limit.get('month')) + 1;
-    let limitDate = limit.get('date');
-    let dateTo = `${limitYear}-${addZero(limitMonth)}-${addZero(limitDate)}`;
+    const limit = moment().add(14, 'days');
+    const limitYear = limit.get('year');
+    const limitMonth = (limit.get('month')) + 1;
+    const limitDate = limit.get('date');
+    const dateTo = `${limitYear}-${addZero(limitMonth)}-${addZero(limitDate)}`;
 
     if ('caches' in window) {
         caches.match(`${BASE_URL}/teams/${idParam}/matches?dateFrom=${dateFrom}&dateTo=${dateTo}`)
@@ -165,16 +165,16 @@ const getScorers = () => {
 }
 
 const getUpcomingMatches = () => {    
-    let yearNow = moment().get('year');
-    let monthNow = (moment().get('month')) + 1;
-    let dateNow = moment().get('date');
-    let dateFrom = `${yearNow}-${addZero(monthNow)}-${addZero(dateNow)}`;
+    const yearNow = moment().get('year');
+    const monthNow = (moment().get('month')) + 1;
+    const dateNow = moment().get('date');
+    const dateFrom = `${yearNow}-${addZero(monthNow)}-${addZero(dateNow)}`;
     
-    let limit = moment().add(14, 'days');
-    let limitYear = limit.get('year');
-    let limitMonth = (limit.get('month')) + 1;
-    let limitDate = limit.get('date');
-    let dateTo = `${limitYear}-${addZero(limitMonth)}-${addZero(limitDate)}`;
+    const limit = moment().add(14, 'days');
+    const limitYear = limit.get('year');
+    const limitMonth = (limit.get('month')) + 1;
+    const limitDate = limit.get('date');
+    const dateTo = `${limitYear}-${addZero(limitMonth)}-${addZero(limitDate)}`;
 
     if ('caches' in window) {
         caches.match(`${BASE_URL}/competitions/${PREMIER_LEAGUE}/matches?dateFrom=${dateFrom}&dateTo=${dateTo}`)
@@ -205,8 +205,8 @@ const getFavoriteTeams = () => {
 }
 
 const getFavoriteTeamsById = () => {
-    let urlParams = new URLSearchParams(window.location.search);
-    let idParam = urlParams.get("id");
+    const urlParams = new URLSearchParams(window.location.search);
+    const idParam = urlParams.get("id");
 
     getById(idParam)
     .then(data => {
