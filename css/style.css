@@ -30,18 +30,23 @@ section h5 {
     display: none;
 }
 
-.hide-column {
-    display: inline-block;
-}
-
 .official-color {
     background-color: #37003c;
 }
 
+a#done {
+    display: none;
+}
+
 @media (max-width: 900px) {
-    .short-text { display: inline-block; }
-    .full-text { display: none; }
-    .hide-column { display: none; }
+    .short-text {
+        display: inline-block; 
+    }
+    
+    .full-text {
+        display: none;
+    }
+
     .logo {
         height: 45px;
     }
