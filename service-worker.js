@@ -25,7 +25,17 @@ workbox.precaching.precacheAndRoute([
     { url: './js/nav.js', revision: '1' },
     { url: './js/render.js', revision: '2' },
     { url: './js/team.js', revision: '1' },
-    { url: './js/utility.js', revision: '1' }], {ignoreURLParametersMatching: [/.*/]}
+    { url: './js/utility.js', revision: '1' },
+    { url: './img/icon-36x36.png', revision: '1' },
+    { url: './img/icon-48x48.png', revision: '1' },
+    { url: './img/icon-72x72.png', revision: '1' },
+    { url: './img/icon-96x96.png', revision: '1' },
+    { url: './img/icon-144x144.png', revision: '1' },
+    { url: './img/icon-192x192.png', revision: '1' },
+    { url: './img/icon-512x512.png', revision: '1' },
+    { url: 'https://fonts.gstatic.com/s/materialicons/v53/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2', revision: '1' },
+    { url: 'https://fonts.googleapis.com/icon?family=Material+Icons', revision: '1' }],
+    { ignoreURLParametersMatching: [/.*/] }
 );
 
 workbox.routing.registerRoute(
