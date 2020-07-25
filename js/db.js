@@ -38,8 +38,8 @@ const getById = id => {
     return new Promise(function(resolve, reject) {
         dbPromised
         .then(function(db) {
-            var tx = db.transaction("favorite", "readonly");
-            var store = tx.objectStore("favorite");
+            const tx = db.transaction("favorite", "readonly");
+            const store = tx.objectStore("favorite");
             return store.get(id);
         })
         .then(data => resolve(data));
@@ -53,5 +53,6 @@ const deleteFavoriteTeam = id => {
         const store = tx.objectStore("favorite");
         store.delete(parseInt(id));
         return tx.complete;
-    }).then(() => console.log(`Successfully Deleted!`))
+    })
+    .then(() => console.log(`Successfully Deleted!`))
 }
