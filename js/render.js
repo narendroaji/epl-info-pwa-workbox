@@ -96,8 +96,11 @@ const showTeamById = data => {
         playerList += `
             <tr>
                 <td>${player.name}</td>
-                <td><span class="short-text">${shortenPlayerPosition}</span><span class="full-text">${player.position}</span></td>
-                <td class="hide-column">${player.nationality}</td>
+                <td>
+                    <span class="short-text">${shortenPlayerPosition}</span>
+                    <span class="full-text">${player.position}</span>
+                </td>
+                <td class="hide-on-small-only">${player.nationality}</td>
             </tr>
         `;
     })
@@ -110,7 +113,7 @@ const showTeamById = data => {
                     <tr class ="white-text official-color">
                         <td><strong>Name</strong></td>
                         <td><strong>Position</strong></td>
-                        <td class="hide-column"><strong>Nationality</strong></td>
+                        <td class="hide-on-small-only"><strong>Nationality</strong></td>
                     </tr>
                 </thead>
                 <tbody>
@@ -171,13 +174,14 @@ const showStandings = data => {
             <td><img src="${team.team.crestUrl.replace(
                 /^http:\/\//i,
                 "https://"
-                )}" style="height: 30px" alt="badge"></td>
-            <td class="hide-column">${team.team.name}</td>
-            <td>${team.playedGames}</td>
-            <td>${team.won}</td>
-            <td>${team.draw}</td>
-            <td>${team.lost}</td>
-            <td>${team.points}</td>
+                )}" style="height: 30px" alt="badge">
+            </td>
+            <td class="hide-on-small-only">${team.team.name}</td>
+            <td class="center-align">${team.playedGames}</td>
+            <td class="center-align">${team.won}</td>
+            <td class="center-align">${team.draw}</td>
+            <td class="center-align">${team.lost}</td>
+            <td class="center-align">${team.points}</td>
         </tr>
         `;
     });
@@ -190,12 +194,27 @@ const showStandings = data => {
                     <tr>
                         <td class="center">Pos.</td>
                         <td>Club</td>
-                        <td class="hide-column"></td>
-                        <td>P</td>
-                        <td>W</td>
-                        <td>D</td>
-                        <td>L</td>
-                        <td>Pts</td>
+                        <td class="hide-on-small-only"></td>
+                        <td class="center-align">
+                            <span class="short-text">P</span>
+                            <span class="full-text">Played</span>
+                        </td>
+                        <td class="center-align">
+                            <span class="short-text">W</span>
+                            <span class="full-text">Won</span>
+                        </td>
+                        <td class="center-align">
+                            <span class="short-text">D</span>
+                            <span class="full-text">Drawn</span>
+                        </td>
+                        <td class="center-align">
+                            <span class="short-text">L</span>
+                            <span class="full-text">Lost</span>
+                        </td>
+                        <td class="center-align">
+                            <span class="short-text">Pts</span>
+                            <span class="full-text">Points</span>
+                        </td>
                     </tr>
                 </thead>
                 <tbody id="standings">
@@ -213,7 +232,8 @@ const showScorers = data => {
         scorers += `
         <tr>
             <td>${player.player.name}</td>
-            <td class="hide-column">${player.team.name}</td>
+            <td class="hide-on-small-only">${player.team.name}</td>
+            <td class="hide-on-small-only">${player.player.nationality}</td>
             <td>${player.numberOfGoals}</td>
         </tr>
         `;
@@ -226,7 +246,8 @@ const showScorers = data => {
                 <thead>
                     <tr>
                         <td><strong>Name</strong></td>
-                        <td class="hide-column"><strong>Team</strong></td>
+                        <td class="hide-on-small-only"><strong>Team</strong></td>
+                        <td class="hide-on-small-only"><strong>Nationality</strong></td>
                         <td><strong>Goals</strong></td>
                     </tr>
                 </thead>
@@ -242,11 +263,11 @@ const showScorers = data => {
 const showUpcomingMatches = data => {
     let matchList = ``;
     let noMatches = `
-        <section class="col s12 z-depth-3">
+        <section class="z-depth-3">
             <p class="center-align"><strong>There is no matches or league has ended.</strong></p>
         </section>
     `;
-
+    
     data.matches.forEach(match => {
         matchList += `
             <table class="striped centered z-depth-2" style="margin-bottom: 20px;">
