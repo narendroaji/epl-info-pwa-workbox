@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const isFromSaved = urlParams.get("saved");
     const btnSave = document.getElementById("save");
     const btnDelete = document.getElementById("delete");
+    const btnDone = document.getElementById("done");
 
     if (isFromSaved) {
         btnSave.style.display = 'none';
@@ -13,6 +14,8 @@ document.addEventListener("DOMContentLoaded", function() {
             await deleteFavoriteTeam(teamId);
             M.toast({html: 'Successfully deleted!'});
             btnDelete.style.display = 'none';
+            btnDone.style.display = 'inline-block';
+            btnDone.classList.add("red");
         }
     } else {
         btnDelete.style.display = 'none';
@@ -27,6 +30,8 @@ document.addEventListener("DOMContentLoaded", function() {
             .then(function() {
                 M.toast({html: 'Successfully added!'});
                 btnSave.style.display = 'none';
+                btnDone.style.display = 'inline-block';
+                btnDone.classList.add("green");
             })
         }
     }
