@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function() {
     // !Activate sidebar nav
-    let elems = document.querySelectorAll(".sidenav");
+    const elems = document.querySelectorAll(".sidenav");
     M.Sidenav.init(elems);
     loadNav();
 
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 document.querySelectorAll(".sidenav a, .topnav a").forEach(function(elm) {
                     elm.addEventListener("click", function(event) {
                         // !Tutup sidenav
-                        let sidenav = document.querySelector(".sidenav");
+                        const sidenav = document.querySelector(".sidenav");
                         M.Sidenav.getInstance(sidenav).close();
                 
                         // !Muat konten halaman yang dipanggil
