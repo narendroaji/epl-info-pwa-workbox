@@ -41,28 +41,28 @@ workbox.precaching.precacheAndRoute([
 workbox.routing.registerRoute(
     /^https:\/\/fonts\.googleapis\.com/,
     new workbox.strategies.StaleWhileRevalidate({
-        cacheName: 'google-fonts-stylesheets',
+        cacheName: 'google-fonts-stylesheets'
     })
 );
 
 workbox.routing.registerRoute(
     /^https:\/\/fonts\.gstatic\.com/,
     new workbox.strategies.StaleWhileRevalidate({
-        cacheName: 'google-fonts-webfonts',
+        cacheName: 'google-fonts-webfonts'
     })
 );
 
 workbox.routing.registerRoute(
     new RegExp('https://api.football-data.org/v2/'),
     new workbox.strategies.StaleWhileRevalidate({
-      cacheName: 'api',
+      cacheName: 'api'
     })
 );
 
 workbox.routing.registerRoute(
     new RegExp('/pages'),
     new workbox.strategies.StaleWhileRevalidate({
-      cacheName: 'pages',
+      cacheName: 'pages'
     })
 );
 
@@ -76,9 +76,9 @@ workbox.routing.registerRoute(
             }),
             new workbox.expiration.ExpirationPlugin({
                 maxEntries: 60,
-                maxAgeSeconds: 14 * 24 * 60 * 60,
-            }),
-        ],
+                maxAgeSeconds: 14 * 24 * 60 * 60
+            })
+        ]
     })
 );
 
