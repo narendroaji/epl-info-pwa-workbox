@@ -193,7 +193,7 @@ const showStandings = data => {
                 <thead>
                     <tr>
                         <td class="center">Pos.</td>
-                        <td>Club</td>
+                        <td>Team</td>
                         <td class="hide-on-small-only"></td>
                         <td class="center-align">
                             <span class="short-text">P</span>
