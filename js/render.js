@@ -13,7 +13,7 @@ const showTeams = data => {
                             <td class="center"><img src="${team.crestUrl.replace(
                                 /^http:\/\//i,
                                 "https://"
-                            )}" alt="badge" style="width: 100px; height:100px;"></td>
+                            )}" alt="${team.name}" style="width: 100px; height:100px;"></td>
                         </tr>
                         <tr>    
                             <td>${team.name}</td>
