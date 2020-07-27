@@ -43,40 +43,40 @@ const showTeamById = data => {
     })
 
     let teamDetail = `
-    <section class="z-depth-3">
-        <div class="center" style="margin-bottom: 20px;">
-        <img src="${data.crestUrl.replace(
-            /^http:\/\//i,
-            "https://"
-        )}" alt="badge" width="25%">
-        </div>
-        <table class="striped">
-            <tr>
-                <td>Name</td>
-                <td>${data.name}</td>
-            </tr>
-            <tr>
-                <td>TLA</td>
-                <td>${data.tla}</td>
-            </tr>
-            <tr>
-                <td>Manager</td>
-                <td>${coach[0].name}</td>
-            </tr>
-            <tr>
-                <td>Founded</td>
-                <td>${data.founded}</td>
-            </tr>
-            <tr>
-                <td>Website</td>
-                <td><a href="${data.website}">${data.website}</a></td>
-            </tr>
-            <tr>
-                <td>Venue</td>
-                <td>${data.venue}</td>
-            </tr>
-        </table>            
-    </section>
+        <section class="z-depth-3">
+            <div class="center" style="margin-bottom: 20px;">
+            <img src="${data.crestUrl.replace(
+                /^http:\/\//i,
+                "https://"
+            )}" alt="${data.name}" width="25%">
+            </div>
+            <table class="striped">
+                <tr>
+                    <td>Name</td>
+                    <td>${data.name}</td>
+                </tr>
+                <tr>
+                    <td>TLA</td>
+                    <td>${data.tla}</td>
+                </tr>
+                <tr>
+                    <td>Manager</td>
+                    <td>${coach[0].name}</td>
+                </tr>
+                <tr>
+                    <td>Founded</td>
+                    <td>${data.founded}</td>
+                </tr>
+                <tr>
+                    <td>Website</td>
+                    <td><a href="${data.website}">${data.website}</a></td>
+                </tr>
+                <tr>
+                    <td>Venue</td>
+                    <td>${data.venue}</td>
+                </tr>
+            </table>            
+        </section>
     `;
     document.getElementById('showTeamInfo').innerHTML = teamDetail;
     
@@ -169,20 +169,20 @@ const showStandings = data => {
     let standings = ``;
     data.standings[0].table.forEach(team => {
         standings += `
-        <tr>
-            <td class="center-align">${team.position}</td>
-            <td><img src="${team.team.crestUrl.replace(
-                /^http:\/\//i,
-                "https://"
-                )}" style="height: 30px" alt="badge">
-            </td>
-            <td class="hide-on-small-only">${team.team.name}</td>
-            <td class="center-align">${team.playedGames}</td>
-            <td class="center-align">${team.won}</td>
-            <td class="center-align">${team.draw}</td>
-            <td class="center-align">${team.lost}</td>
-            <td class="center-align">${team.points}</td>
-        </tr>
+            <tr>
+                <td class="center-align">${team.position}</td>
+                <td><img src="${team.team.crestUrl.replace(
+                    /^http:\/\//i,
+                    "https://"
+                    )}" style="height: 30px" alt="${team.team.name}">
+                </td>
+                <td class="hide-on-small-only">${team.team.name}</td>
+                <td class="center-align">${team.playedGames}</td>
+                <td class="center-align">${team.won}</td>
+                <td class="center-align">${team.draw}</td>
+                <td class="center-align">${team.lost}</td>
+                <td class="center-align">${team.points}</td>
+            </tr>
         `;
     });
 
@@ -230,12 +230,12 @@ const showScorers = data => {
     let scorers = ``;
     data.scorers.forEach(player => {
         scorers += `
-        <tr>
-            <td>${player.player.name}</td>
-            <td class="hide-on-small-only">${player.team.name}</td>
-            <td class="hide-on-small-only">${player.player.nationality}</td>
-            <td>${player.numberOfGoals}</td>
-        </tr>
+            <tr>
+                <td>${player.player.name}</td>
+                <td class="hide-on-small-only">${player.team.name}</td>
+                <td class="hide-on-small-only">${player.player.nationality}</td>
+                <td>${player.numberOfGoals}</td>
+            </tr>
         `;
     });
 
@@ -319,7 +319,7 @@ const showFavoriteTeams = data => {
                             <img src="${favoriteTeam.crestUrl.replace(
                                 /^http:\/\//i,
                                 "https://"
-                                )}" alt="" style="height: 75px">
+                                )}" alt="${favoriteTeam.name}" style="height: 75px">
                         </td>
                         <td style="width: 50%;"><strong>${favoriteTeam.name}</strong></td>
                         <td style="width: 25%;">
