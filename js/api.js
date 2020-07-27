@@ -34,18 +34,6 @@ const error = error => {
 }
 
 const getTeams = () => {
-    if ('caches' in window) {
-        caches.match(`${BASE_URL}/competitions/${PREMIER_LEAGUE}/teams`)
-        .then(response => {
-            if (response) {
-                response.json()
-                .then(data => {
-                    showTeams(data);
-                })
-            }
-        })
-    }
-
     fetch(`${BASE_URL}/competitions/${PREMIER_LEAGUE}/teams`, OPTIONS)
     .then(status)
     .then(json)
@@ -59,19 +47,6 @@ const getTeamById = () => {
     return new Promise(function(resolve, reject) {
         const urlParams = new URLSearchParams(window.location.search);
         const idParam = urlParams.get("id");
-
-        if ('caches' in window) {
-            caches.match(`${BASE_URL}/teams/${idParam}`)
-            .then(response => {
-                if (response) {
-                    response.json()
-                    .then(data => {
-                        showTeamById(data);
-                        resolve(data);
-                    })
-                }
-            })
-        }
 
         fetch(`${BASE_URL}/teams/${idParam}`, OPTIONS)
         .then(status)
@@ -99,18 +74,6 @@ const getUpcomingMatchesByTeamId = () => {
     const limitDate = limit.get('date');
     const dateTo = `${limitYear}-${addZero(limitMonth)}-${addZero(limitDate)}`;
 
-    if ('caches' in window) {
-        caches.match(`${BASE_URL}/teams/${idParam}/matches?dateFrom=${dateFrom}&dateTo=${dateTo}`)
-        .then(response => {
-            if (response) {
-                response.json()
-                .then(data => {
-                    showUpcomingMatchesByTeamId(data);
-                })
-            }
-        })
-    }
-
     fetch(`${BASE_URL}/teams/${idParam}/matches?dateFrom=${dateFrom}&dateTo=${dateTo}`, OPTIONS)
     .then(status)
     .then(json)
@@ -121,18 +84,6 @@ const getUpcomingMatchesByTeamId = () => {
 }
 
 const getStandings = () => {
-    if ('caches' in window) {
-        caches.match(`${BASE_URL}/competitions/${PREMIER_LEAGUE}/standings?standingType=TOTAL`)
-        .then(response => {
-            if (response) {
-                response.json()
-                .then(data => {
-                    showStandings(data);
-                })
-            }
-        })
-    }
-
     fetch(`${BASE_URL}/competitions/${PREMIER_LEAGUE}/standings?standingType=TOTAL`, OPTIONS)
     .then(status)
     .then(json)
@@ -143,18 +94,6 @@ const getStandings = () => {
 }
 
 const getScorers = () => {
-    if ('caches' in window) {
-        caches.match(`${BASE_URL}/competitions/${PREMIER_LEAGUE}/scorers`)
-        .then(response => {
-            if (response) {
-                response.json()
-                .then(data => {
-                    showScorers(data);
-                })
-            }
-        })
-    }
-
     fetch(`${BASE_URL}/competitions/${PREMIER_LEAGUE}/scorers`, OPTIONS)
     .then(status)
     .then(json)
@@ -175,18 +114,6 @@ const getUpcomingMatches = () => {
     const limitMonth = (limit.get('month')) + 1;
     const limitDate = limit.get('date');
     const dateTo = `${limitYear}-${addZero(limitMonth)}-${addZero(limitDate)}`;
-
-    if ('caches' in window) {
-        caches.match(`${BASE_URL}/competitions/${PREMIER_LEAGUE}/matches?dateFrom=${dateFrom}&dateTo=${dateTo}`)
-        .then(response => {
-            if (response) {
-                response.json()
-                .then(data => {
-                    showUpcomingMatches(data);
-                })
-            }
-        })
-    }
 
     fetch(`${BASE_URL}/competitions/${PREMIER_LEAGUE}/matches?dateFrom=${dateFrom}&dateTo=${dateTo}`, OPTIONS)
     .then(status)
